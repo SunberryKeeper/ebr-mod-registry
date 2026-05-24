@@ -15,6 +15,7 @@ ebr-mod-registry/
   .github/
     workflows/
       build-registry.yml       # Runs build-registry.js on merge to main
+      validate-pr.yml          # Validates mod JSON files on PRs targeting main
 ```
 
 Each mod gets its own file in `mods/`. A GitHub Action builds the combined `registry.json` on every merge to `main`.
@@ -29,17 +30,6 @@ Each mod gets its own file in `mods/`. A GitHub Action builds the combined `regi
 ### Commit pinning
 
 Each per-mod file records a `commitHash` - the exact git commit the mod was published from. The app downloads that specific commit, not `main`.
-
-## Mod types
-
-| Type | Description |
-|---|---|
-| `campaign` | Standalone campaign built from scratch |
-| `enhancement` | Focused modifications to existing campaign content |
-| `one-day-mission` | Single-session mission designed for one sitting |
-| `expansion` | New areas, story arcs, or mission chains |
-| `collection` | Pre-merged combination of multiple mods |
-| `theme` | Visual reskins |
 
 ## Moderation
 
